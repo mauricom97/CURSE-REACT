@@ -13,16 +13,27 @@ class App extends Component {
         this.diminuir = this.diminuir.bind(this);
     }
 
-    aumentar(){
+    aumentar() {
         let state = this.state;
-        state.contador++;
-        this.setState(state);
+        if (state.contador >= 10) {
+            alert("Opa, você já chegou a 10")
+        } else {
+            state.contador++;
+            this.setState(state);
+        }
+
     }
 
-    diminuir(){
+    diminuir() {
         let state = this.state;
-        state.contador--;
-        this.setState(state);
+        if (state.contador === 0) {
+            alert('Já está em 0')
+        } else {
+            state.contador--;
+            this.setState(state);
+        }
+
+
     }
 
     render() {
